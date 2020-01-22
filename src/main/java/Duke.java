@@ -12,8 +12,10 @@ public class Duke {
         while(sc.hasNext()) {
             String input = sc.next();
             if(input.toLowerCase().contains("bye")) {
+                //exit when "bye"
                 System.out.println("  " + "Bye. Hope to see you again soon!");
                 break;
+
             }
             System.out.println("  " + input);
         }
