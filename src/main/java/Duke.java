@@ -31,8 +31,16 @@ public class Duke {
                     Task curr = tasks.get(i);
                     System.out.println(i + 1 + ". " + curr);
                 }
+            }else if(instr.contains("delete")) {
+                //get task number and delete task frokm arraylist
+                int eventNum = sc.nextInt();
+                Task deleted = tasks.remove(eventNum-1);
+                System.out.println("Noted. I've removed this task:");
+                System.out.println("  " + deleted);
+                System.out.printf("Now you have %d tasks in the list.\n", tasks.size());
+
             }else if(instr.contains("done")) {
-                //task number and change isDone to true
+                //get task number and change isDone to true
                 int eventNum = sc.nextInt();
                 Task curr = tasks.get(eventNum-1);
                 curr.markAsDone();
