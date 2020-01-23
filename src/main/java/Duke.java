@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 
 public class Duke {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws DukeException {
         Scanner sc = new Scanner(System.in);
         //initialize item array
         ArrayList<Task> tasks = new ArrayList<Task>();
@@ -40,34 +40,51 @@ public class Duke {
                 System.out.println("  " + curr);
 
             }else{
-                String input = sc.nextLine();
-                //add items to tasks array
-                if(instr.equalsIgnoreCase("todo")){
-                    Task newTodo = new Todo(input);
-                    tasks.add(newTodo);
-                    System.out.println("Got it. I've added this task:");
-                    System.out.println("  " + newTodo);
+                try {
+                    String input = sc.nextLine();
+                    //add items to tasks array
+                    if (instr.equalsIgnoreCase("todo")) {
+                        if (!input.isEmpty()) {
+                                Task newTodo = new Todo(input);
+                                tasks.add(newTodo);
+                                System.out.println("Got it. I've added this task:");
+                                System.out.println("  " + newTodo);
+                        } else {
+                            throw new DukeException("OOPS!!! The description of a todo cannot be empty.");
+                        }
 
-                }else if(instr.equalsIgnoreCase("deadline")) {
-                    String[] inputArr = input.split(" /by ");
-                    Task newDeadline = new Deadline(inputArr[0],inputArr[1]);
-                    tasks.add(newDeadline);
-                    System.out.println("Got it. I've added this task:");
-                    System.out.println("  " + newDeadline);
 
-                }else if(instr.equalsIgnoreCase("event")) {
-                    String[] inputArr = input.split(" /at ");
-                    Task newEvent = new Event(inputArr[0],inputArr[1]);
-                    tasks.add(newEvent);
-                    System.out.println("Got it. I've added this task:");
-                    System.out.println("  " + newEvent);
+                    } else if (instr.equalsIgnoreCase("deadline")) {
+                        if(!input.isEmpty()) {
+                            String[] inputArr = input.split(" /by ");
+                            Task newDeadline = new Deadline(inputArr[0], inputArr[1]); //catch indexoutofboundserror
+                            tasks.add(newDeadline);
+                            System.out.println("Got it. I've added this task:");
+                            System.out.println("  " + newDeadline);
+                        }else{
+                            throw new DukeException("OOPS!!! The description of a deadline cannot be empty.");
+                        }
 
-                }else{
-                    //instruction does not exist
-                    break;
+                    } else if (instr.equalsIgnoreCase("event")) {
+                        if(!input.isEmpty()) {
+                            String[] inputArr = input.split(" /at ");
+                            Task newEvent = new Event(inputArr[0], inputArr[1]);
+                            tasks.add(newEvent);
+                            System.out.println("Got it. I've added this task:");
+                            System.out.println("  " + newEvent);
+                        }else{
+                            throw new DukeException("OOPS!!! The description of a event cannot be empty.");
+                        }
+
+                    } else {
+                        //instruction does not exist
+                        throw new DukeException("OOPS!!! I'm sorry, but I don't know what that means :-(");
+                    }
+                    System.out.printf("Now you have %d tasks in the list.\n", tasks.size());
+                }catch(DukeException ex) {
+                    //catch exceptions thrown and print out message for user
+                    System.out.println(ex);
                 }
-                System.out.printf("Now you have %d tasks in the list.\n",tasks.size());
-
             }
 
         }
