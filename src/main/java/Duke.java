@@ -15,33 +15,58 @@ public class Duke {
 
         System.out.println("Hello I'm \n" + logo + "\nWhat can I do for you?");
         while(sc.hasNextLine()) {
-            String input = sc.nextLine();
+            String instr = sc.next();
 
-            if(input.toLowerCase().contains("bye")) {
+            if(instr.toLowerCase().contains("bye")) {
                 //exit when "bye"
                 System.out.println("  " + "Bye. Hope to see you again soon!");
                 break;
 
-            } else if(input.equalsIgnoreCase("list")) {
+            } else if(instr.equalsIgnoreCase("list")) {
                 //loop through tasks array to list
+                System.out.println("Here are the tasks in your list:");
                 for (int i = 0; i < tasks.size(); i++) {
                     //print out everything one by one
                     Task curr = tasks.get(i);
-                    System.out.println(i + 1 + ". [" + curr.getStatusIcon() + "] " + curr.getDescription());
+                    System.out.println(i + 1 + ". " + curr);
                 }
-            }else if(input.contains("done")) {
+            }else if(instr.contains("done")) {
                 //task number and change isDone to true
-                String[] arr = input.split(" ");
-                int eventNum = Integer.parseInt(arr[1]);
+                int eventNum = sc.nextInt();
                 Task curr = tasks.get(eventNum-1);
                 curr.markAsDone();
                 System.out.println("Nice! I've marked this task as done: ");
-                System.out.println("  " + "[" + curr.getStatusIcon() + "] " + curr.getDescription());
+                System.out.println("  " + curr);
 
             }else{
-                //add item if not goodbye
-                tasks.add(new Task(input));
-                System.out.println("  added: " + input);
+                String input = sc.nextLine();
+                //add items to tasks array
+                if(instr.equalsIgnoreCase("todo")){
+                    Task newTodo = new Todo(input);
+                    tasks.add(newTodo);
+                    System.out.println("Got it. I've added this task:");
+                    System.out.println("  " + newTodo);
+
+                }else if(instr.equalsIgnoreCase("deadline")) {
+                    String[] inputArr = input.split(" /by ");
+                    Task newDeadline = new Deadline(inputArr[0],inputArr[1]);
+                    tasks.add(newDeadline);
+                    System.out.println("Got it. I've added this task:");
+                    System.out.println("  " + newDeadline);
+
+                }else if(instr.equalsIgnoreCase("event")) {
+                    String[] inputArr = input.split(" /at ");
+                    Task newEvent = new Event(inputArr[0],inputArr[1]);
+                    tasks.add(newEvent);
+                    System.out.println("Got it. I've added this task:");
+                    System.out.println("  " + newEvent);
+
+                }else{
+                    //instruction does not exist
+                    break;
+                }
+                System.out.printf("Now you have %d tasks in the list.\n",tasks.size());
+
             }
 
         }
