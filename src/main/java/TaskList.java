@@ -89,5 +89,18 @@ public class TaskList {
         return tasks.size();
     }
 
+    public void find(String keyword) {
+        ArrayList<Task> foundList = new ArrayList<Task>();
+        for (Task t: tasks) {
+            if (t.getDescription().contains(keyword)) {
+                foundList.add(t);
+            }
+        }
+        ui.found(foundList);
+        for (int i = 0; i < foundList.size(); i++) {
+            Task t = foundList.get(i);
+            System.out.println(i + 1 + ". " + t);
+        }
+    }
 
 }

@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 /**
  * Deals with interactions with the user.
  */
+=======
+import java.util.ArrayList;
+
+>>>>>>> branch-Level-9
 public class Ui {
     private String logo = " ____        _        \n"
             + "|  _ \\ _   _| | _____ \n"
@@ -33,14 +38,11 @@ public class Ui {
         System.out.println("Here are the tasks in your list:");
     }
 
-<<<<<<< HEAD
     /**
      * Informs user of deleted task.
      * @param deleted task that has been deleted from list.
      * @param size total number of tasks.
      */
-=======
->>>>>>> branch-A-CodingStandard
     public void delete(Task deleted, int size) {
         System.out.println("Noted. I've removed this task:");
         System.out.println("  " + deleted);
@@ -54,5 +56,13 @@ public class Ui {
     public void done(Task curr) {
         System.out.println("Nice! I've marked this task as done: ");
         System.out.println("  " + curr);
+    }
+
+    public void found(ArrayList list) {
+        if (!list.isEmpty()) {
+            System.out.println("Here are the matching tasks in your list:");
+        } else {
+            System.out.println("There are no matching tasks in your list :(");
+        }
     }
 }
