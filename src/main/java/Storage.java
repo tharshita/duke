@@ -58,13 +58,13 @@ public class Storage {
 
                 if (data[0].equals("T")) {
                     Task ntodo = new Todo(data[2]);
-                    if(data[1].equals("true")) {
+                    if (data[1].equals("true")) {
                         ntodo.markAsDone();
                     }
                     tasks.add(ntodo);
                 } else if (data[0].equals("D")) {
                     Task deadline = new Deadline(data[2], LocalDate.parse(data[3]));
-                    if(data[1].equals("true")) {
+                    if( data[1].equals("true")) {
                         deadline.markAsDone();
                     }
                     tasks.add(deadline);

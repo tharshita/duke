@@ -8,7 +8,9 @@ public class Ui {
             + "| |_| | |_| |   <  __/\n"
             + "|____/ \\__,_|_|\\_\\___|\n";
 
-    public Ui() { }
+    public Ui() {
+        
+    }
 
     /**
      * Greets user.
@@ -31,11 +33,14 @@ public class Ui {
         System.out.println("Here are the tasks in your list:");
     }
 
+<<<<<<< HEAD
     /**
      * Informs user of deleted task.
      * @param deleted task that has been deleted from list.
      * @param size total number of tasks.
      */
+=======
+>>>>>>> branch-A-CodingStandard
     public void delete(Task deleted, int size) {
         System.out.println("Noted. I've removed this task:");
         System.out.println("  " + deleted);
