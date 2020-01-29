@@ -27,6 +27,7 @@ public class Task {
     /**
      * Returns description of task.
      */
+
     public String getDescription() {
         return this.description;
     }
@@ -34,6 +35,7 @@ public class Task {
      * Returns task in string format with a date.
      * @return string format to save in storage.
      */
+
     public String saveFormat() {
         return "," + this.isDone + "," + getDescription();
     }
@@ -41,6 +43,7 @@ public class Task {
      * Returns status of task.
      * @return true if done, false if incomplete.
      */
+
     public boolean getStatus() {
         return this.isDone;
     }
@@ -49,6 +52,7 @@ public class Task {
      * Return task in string format.
      * @return string format to show user.
      */
+
     @Override
     public String toString() {
         return "[" + getStatusIcon() + "]" + getDescription();

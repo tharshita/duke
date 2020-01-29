@@ -64,7 +64,7 @@ public class Storage {
                     tasks.add(ntodo);
                 } else if (data[0].equals("D")) {
                     Task deadline = new Deadline(data[2], LocalDate.parse(data[3]));
-                    if( data[1].equals("true")) {
+                    if (data[1].equals("true")) {
                         deadline.markAsDone();
                     }
                     tasks.add(deadline);

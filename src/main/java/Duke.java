@@ -6,6 +6,11 @@ import java.util.Scanner;
  */
 
 public class Duke {
+
+    /**
+     * Runs main programme.
+     * @param args args passed by command line
+     */
     public static void main(String[] args) {
         //initialize
         Storage storage = new Storage();

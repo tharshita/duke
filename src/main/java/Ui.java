@@ -55,6 +55,10 @@ public class Ui {
         System.out.println("  " + curr);
     }
 
+    /**
+     * Prints intro for found tasks.
+     * @param list list of found tasks.
+     */
     public void found(ArrayList list) {
         if (!list.isEmpty()) {
             System.out.println("Here are the matching tasks in your list:");

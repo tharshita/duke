@@ -12,6 +12,7 @@ public class TaskList {
         this.tasks = tasks;
         this.ui = ui;
     }
+
     /**
      * Lists all tasks in chronological order.
      */
@@ -22,6 +23,7 @@ public class TaskList {
             System.out.println(i + 1 + ". " + curr);
         }
     }
+
     /**
      * Deletes specified task.
      * @param index specifies the task to be deleted.
@@ -31,6 +33,7 @@ public class TaskList {
         Task deleted = (Task) tasks.remove(index - 1);
         ui.delete(deleted, tasks.size());
     }
+
     /**
      * Concatenates all tasks in string format.
      */
@@ -41,6 +44,7 @@ public class TaskList {
         }
         return taskStr;
     }
+
     /**
      * Checks the task specified and marks it as completed.
      * @param eventNum specified task that has been completed.
@@ -50,6 +54,7 @@ public class TaskList {
         curr.markAsDone();
         ui.done(curr);
     }
+
     /**
      * Adds atodo task to the tasklist.
      * @param input description of task.
@@ -60,6 +65,7 @@ public class TaskList {
         System.out.println("Got it. I've added this task:");
         System.out.println("  " + newTodo);
     }
+
     /**
      * Adds a deadline task to the tasklist.
      * @param input description of task including date.
@@ -71,6 +77,7 @@ public class TaskList {
         System.out.println("Got it. I've added this task:");
         System.out.println("  " + newDeadline);
     }
+
     /**
      * Adds an event task to the tasklist.
      * @param input description of task including date.
@@ -82,6 +89,7 @@ public class TaskList {
         System.out.println("Got it. I've added this task:");
         System.out.println("  " + newEvent);
     }
+
     /**
      * Returns number of items in the task list.
      */
@@ -89,6 +97,10 @@ public class TaskList {
         return tasks.size();
     }
 
+    /**
+     * Finds tasks with matching keyword and lists them.
+     * @param keyword to match.
+     */
     public void find(String keyword) {
         ArrayList<Task> foundList = new ArrayList<Task>();
         for (Task t: tasks) {

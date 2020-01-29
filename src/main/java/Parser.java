@@ -9,6 +9,12 @@ public class Parser {
     private TaskList taskList;
     private Storage storage;
 
+    /**
+     * Constructor for Parser.
+     * @param ui ui instance.
+     * @param taskList tasklist instance.
+     * @param storage storage instance.
+     */
     public Parser(Ui ui, TaskList taskList, Storage storage) {
         sc = new Scanner(System.in);
         this.ui = ui;
@@ -49,7 +55,7 @@ public class Parser {
                 String keyword = sc.nextLine();
                 taskList.find(keyword);
 
-            }else{
+            } else {
                 try {
                     String input = sc.nextLine();
                     //add items to tasks array
