@@ -1,11 +1,8 @@
-<<<<<<< HEAD
+import java.util.ArrayList;
+
 /**
  * Deals with interactions with the user.
  */
-=======
-import java.util.ArrayList;
-
->>>>>>> branch-Level-9
 public class Ui {
     private String logo = " ____        _        \n"
             + "|  _ \\ _   _| | _____ \n"
