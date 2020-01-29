@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Ui {
     private String logo = " ____        _        \n"
             + "|  _ \\ _   _| | _____ \n"
@@ -27,5 +29,13 @@ public class Ui {
     public void done(Task curr) {
         System.out.println("Nice! I've marked this task as done: ");
         System.out.println("  " + curr);
+    }
+
+    public void found(ArrayList list) {
+        if (!list.isEmpty()) {
+            System.out.println("Here are the matching tasks in your list:");
+        } else {
+            System.out.println("There are no matching tasks in your list :(");
+        }
     }
 }

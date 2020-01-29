@@ -35,6 +35,12 @@ public class Parser {
                 //get task number and change isDone to true
                 int eventNum = sc.nextInt();
                 taskList.done(eventNum);
+
+            } else if (instr.contains("find")) {
+                String[] arr = instr.split(" ");
+                String keyword = sc.nextLine();
+                taskList.find(keyword);
+
             }else{
                 try {
                     String input = sc.nextLine();
