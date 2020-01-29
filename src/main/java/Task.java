@@ -23,6 +23,9 @@ public class Task {
         return "," + this.isDone + "," + getDescription();
     }
 
+    public boolean getStatus() {
+        return this.isDone;
+    }
 
     @Override
     public String toString() {
