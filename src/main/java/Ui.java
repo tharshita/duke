@@ -5,7 +5,9 @@ public class Ui {
             + "| |_| | |_| |   <  __/\n"
             + "|____/ \\__,_|_|\\_\\___|\n";
 
-    public Ui() { }
+    public Ui() {
+        
+    }
 
     public void sayHi() {
         System.out.println("Hello I'm \n" + logo + "\nWhat can I do for you?");
@@ -18,6 +20,7 @@ public class Ui {
     public void list() {
         System.out.println("Here are the tasks in your list:");
     }
+
     public void delete(Task deleted, int size) {
         System.out.println("Noted. I've removed this task:");
         System.out.println("  " + deleted);
