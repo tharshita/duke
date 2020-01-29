@@ -4,6 +4,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.ArrayList;
 import java.nio.charset.Charset;
@@ -34,11 +35,8 @@ public class Storage {
     public ArrayList<Task> readFile() {
         try {
             List<String> lines = Files.readAllLines(path, Charset.defaultCharset());
-            System.out.println(lines);
-//            lines.forEach(System.out::println);
 
             for (int i = 0; i < lines.size(); i++) {
-                System.out.println("here");
                 String curr = lines.get(i);
                 String[] data = curr.split(",");
 
@@ -49,7 +47,7 @@ public class Storage {
                     }
                     tasks.add(ntodo);
                 } else if (data[0].equals("D")) {
-                    Task deadline = new Deadline(data[2], data[3]);
+                    Task deadline = new Deadline(data[2], LocalDate.parse(data[3]));
                     if(data[1].equals("true")) {
                         deadline.markAsDone();
                     }
@@ -64,7 +62,6 @@ public class Storage {
                     continue;
                 }
             }
-            System.out.println(tasks);
         } catch (IOException e) {
             System.out.println(e);
         }
