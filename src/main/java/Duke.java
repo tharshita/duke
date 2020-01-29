@@ -1,12 +1,10 @@
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
-import static java.nio.file.Files.readAllLines;
-
+<<<<<<<HEAD
+=======
+>>>>>>> branch-Level-8
 
 public class Duke {
     public static void main(String[] args) throws DukeException {
@@ -80,7 +78,7 @@ public class Duke {
                     } else if (instr.equalsIgnoreCase("deadline")) {
                         if(!input.isEmpty()) {
                             String[] inputArr = input.split(" /by ");
-                            Task newDeadline = new Deadline(inputArr[0], inputArr[1]); //catch indexoutofboundserror
+                            Task newDeadline = new Deadline(inputArr[0], LocalDate.parse(inputArr[1])); //catch indexoutofboundserror
                             tasks.add(newDeadline);
                             System.out.println("Got it. I've added this task:");
                             System.out.println("  " + newDeadline);

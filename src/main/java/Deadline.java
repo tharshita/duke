@@ -1,7 +1,9 @@
-public class Deadline extends Task {
-    String by;
+import java.time.LocalDate;
 
-    public Deadline(String description, String time) {
+public class Deadline extends Task {
+    LocalDate by;
+
+    public Deadline(String description, LocalDate time) {
         super(description);
         this.by = time;
     }
@@ -13,7 +15,7 @@ public class Deadline extends Task {
 
     @Override
     public String toString() {
-        return "[D]" + super.toString() + " (by: " + by + ")";
+        return "[D]" + super.toString() + " (by: " + by.getMonth() + " " + by.getDayOfMonth() + " " + by.getYear() + ")";
     }
 
 
