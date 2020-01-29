@@ -22,14 +22,10 @@ public class TaskList {
             System.out.println(i + 1 + ". " + curr);
         }
     }
-<<<<<<< HEAD
     /**
      * Deletes specified task.
      * @param index specifies the task to be deleted.
      */
-=======
-
->>>>>>> branch-A-CodingStandard
     public void delete(int index) {
         //get task number and delete task from arraylist
         Task deleted = (Task) tasks.remove(index - 1);
