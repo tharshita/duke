@@ -1,12 +1,21 @@
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+
+import static java.nio.file.Files.readAllLines;
 
 
 public class Duke {
     public static void main(String[] args) throws DukeException {
         Scanner sc = new Scanner(System.in);
         //initialize item array
-        ArrayList<Task> tasks = new ArrayList<Task>();
+        ArrayList<Task> tasks;
+        Storage storage = new Storage();
+
+        tasks = storage.readFile();
 
         String logo = " ____        _        \n"
                 + "|  _ \\ _   _| | _____ \n"
@@ -15,12 +24,18 @@ public class Duke {
                 + "|____/ \\__,_|_|\\_\\___|\n";
 
         System.out.println("Hello I'm \n" + logo + "\nWhat can I do for you?");
+
         while(sc.hasNextLine()) {
             String instr = sc.next();
 
             if(instr.toLowerCase().contains("bye")) {
                 //exit when "bye"
                 System.out.println("  " + "Bye. Hope to see you again soon!");
+                String taskStr = "";
+                for(Task task: tasks) {
+                    taskStr += task.saveFormat() + "\n";
+                }
+                storage.writeToFile(taskStr);
                 break;
 
             } else if(instr.equalsIgnoreCase("list")) {
@@ -28,13 +43,13 @@ public class Duke {
                 System.out.println("Here are the tasks in your list:");
                 for (int i = 0; i < tasks.size(); i++) {
                     //print out everything one by one
-                    Task curr = tasks.get(i);
+                    Task curr = (Task) tasks.get(i);
                     System.out.println(i + 1 + ". " + curr);
                 }
             }else if(instr.contains("delete")) {
                 //get task number and delete task frokm arraylist
                 int eventNum = sc.nextInt();
-                Task deleted = tasks.remove(eventNum-1);
+                Task deleted = (Task) tasks.remove(eventNum-1);
                 System.out.println("Noted. I've removed this task:");
                 System.out.println("  " + deleted);
                 System.out.printf("Now you have %d tasks in the list.\n", tasks.size());
@@ -42,7 +57,7 @@ public class Duke {
             }else if(instr.contains("done")) {
                 //get task number and change isDone to true
                 int eventNum = sc.nextInt();
-                Task curr = tasks.get(eventNum-1);
+                Task curr = (Task) tasks.get(eventNum-1);
                 curr.markAsDone();
                 System.out.println("Nice! I've marked this task as done: ");
                 System.out.println("  " + curr);
@@ -97,4 +112,7 @@ public class Duke {
 
         }
     }
+
+
+
 }
