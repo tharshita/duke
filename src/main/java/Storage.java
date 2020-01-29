@@ -9,6 +9,9 @@ import java.util.List;
 import java.util.ArrayList;
 import java.nio.charset.Charset;
 
+/**
+ * Deals with loading tasks from the file and saving tasks in the file.
+ */
 
 public class Storage {
     private String directory = System.getProperty("user.home");
@@ -21,6 +24,13 @@ public class Storage {
         tasks = new ArrayList<>();
     }
 
+    /**
+     * Writes to storage in hard disk to store tasks added.
+     *
+     * @param content data that is to be written to the file.
+     * @throws IOException  If invalid path or file.
+     */
+
     public void writeToFile(String content) {
         try {
             BufferedWriter writer = Files.newBufferedWriter(path);
@@ -31,6 +41,12 @@ public class Storage {
             System.out.println(e);
         }
     }
+
+    /**
+     * Reads from storage in hard disk to get tasks previously added.
+     *
+     * @throws IOException  If invalid path or file.
+     */
     
     public ArrayList<Task> readFile() {
         try {

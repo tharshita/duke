@@ -1,5 +1,8 @@
 import java.util.Scanner;
 
+/**
+ * Handles user commands.
+ */
 public class Parser {
     private Scanner sc;
     private Ui ui;
@@ -12,6 +15,11 @@ public class Parser {
         this.taskList = taskList;
         this.storage = storage;
     }
+
+    /**
+     * Runs actions invoked by user input.
+     * @throws DukeException  If invalid command such as empty command.
+     */
 
     public void run() {
         while(sc.hasNextLine()) {
