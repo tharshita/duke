@@ -16,6 +16,7 @@ public class TaskList {
     public TaskList(Ui ui) {
         this.ui = ui;
     }
+
     /**
      * Lists all tasks in chronological order.
      */

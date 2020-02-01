@@ -12,6 +12,9 @@ public class Duke {
     private Ui ui;
     private Parser parser;
 
+    /**
+     * Initialises variables and loads data
+     */
     public Duke() {
         ui = new Ui();
         storage = new Storage();
@@ -24,6 +27,9 @@ public class Duke {
         }
     }
 
+    /**
+     * Runs duke programme
+     */
     public void run() {
         ui.sayHi();
         parser.run();
