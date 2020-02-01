@@ -13,7 +13,7 @@ public class Duke {
     private Parser parser;
 
     /**
-     * Initialises variables and loads data
+     * Initialises variables and loads data.
      */
     public Duke() {
         ui = new Ui();
@@ -28,7 +28,7 @@ public class Duke {
     }
 
     /**
-     * Runs duke programme
+     * Runs duke programme.
      */
     public void run() {
         ui.sayHi();
@@ -37,7 +37,7 @@ public class Duke {
 
     /**
      * Runs main programme.
-     * @param args args passed by command line
+     * @param args args passed by command line.
      */
     public static void main(String[] args) {
         new Duke().run();
