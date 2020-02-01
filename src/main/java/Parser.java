@@ -27,7 +27,7 @@ public class Parser {
      * @throws DukeException  If invalid command such as empty command.
      */
 
-    public void run() {
+    public void parse() {
         while (sc.hasNextLine()) {
             String instr = sc.next();
 

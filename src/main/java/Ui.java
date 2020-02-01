@@ -17,8 +17,8 @@ public class Ui {
     /**
      * Greets user.
      */
-    public void sayHi() {
-        System.out.println("Hello I'm \n" + logo + "\nWhat can I do for you?");
+    public String sayHi() {
+         return ("Hello I'm \n" + logo + "\nWhat can I do for you?");
     }
 
     /**
