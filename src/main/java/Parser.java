@@ -43,12 +43,20 @@ public class Parser {
                 taskList.list();
             } else if (instr.contains("delete")) {
                 int eventNum = sc.nextInt();
-                taskList.delete(eventNum);
+                try {
+                    taskList.delete(eventNum);
+                } catch (IndexOutOfBoundsException e) {
+                    System.out.println("OOPS! Task number does not exist! Try again?");
+                }
 
             } else if (instr.contains("done")) {
                 //get task number and change isDone to true
                 int eventNum = sc.nextInt();
-                taskList.done(eventNum);
+                try {
+                    taskList.done(eventNum);
+                } catch (IndexOutOfBoundsException e) {
+                    System.out.println("OOPS! Task number does not exist! Try again?");
+                }
 
             } else if (instr.contains("find")) {
                 String[] arr = instr.split(" ");

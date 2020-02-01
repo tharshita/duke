@@ -7,21 +7,35 @@ import java.util.Scanner;
 
 public class Duke {
 
+    private Storage storage;
+    private TaskList tasks;
+    private Ui ui;
+    private Parser parser;
+
+    public Duke() {
+        ui = new Ui();
+        storage = new Storage();
+        try {
+            tasks = new TaskList(storage.readFile(), ui);
+            parser = new Parser(ui, tasks, storage);
+        } catch (DukeException e) {
+            ui.showLoadingError();
+            tasks = new TaskList(ui);
+        }
+    }
+
+    public void run() {
+        ui.sayHi();
+        parser.run();
+    }
+
     /**
      * Runs main programme.
      * @param args args passed by command line
      */
     public static void main(String[] args) {
-        //initialize
-        Storage storage = new Storage();
-        Ui userInterface = new Ui();
+        new Duke().run();
 
-        TaskList taskList = new TaskList(storage.readFile(), userInterface);
-        Parser parser = new Parser(userInterface, taskList, storage);
-
-        userInterface.sayHi();
-
-        parser.run();
     }
 
 

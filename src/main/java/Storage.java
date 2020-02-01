@@ -48,7 +48,7 @@ public class Storage {
      * @throws IOException  If invalid path or file.
      */
     
-    public ArrayList<Task> readFile() {
+    public ArrayList<Task> readFile() throws DukeException {
         try {
             List<String> lines = Files.readAllLines(path, Charset.defaultCharset());
 
@@ -80,6 +80,7 @@ public class Storage {
             }
         } catch (IOException e) {
             System.out.println(e);
+            throw new DukeException("IO Exception");
         }
         return tasks;
     }

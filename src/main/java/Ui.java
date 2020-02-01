@@ -66,4 +66,8 @@ public class Ui {
             System.out.println("There are no matching tasks in your list :(");
         }
     }
+
+    public void showLoadingError() {
+        System.out.println("OOPS! Previous tasklist failed to load. Let's start afresh!");
+    }
 }
