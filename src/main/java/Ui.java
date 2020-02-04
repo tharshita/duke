@@ -4,70 +4,77 @@ import java.util.ArrayList;
  * Deals with interactions with the user.
  */
 public class Ui {
-    private String logo = " ____        _        \n"
-            + "|  _ \\ _   _| | _____ \n"
-            + "| | | | | | | |/ / _ \\\n"
-            + "| |_| | |_| |   <  __/\n"
-            + "|____/ \\__,_|_|\\_\\___|\n";
+    private String logo = "   _   _   _   _   _  \n"
+            +"  / \\ / \\ / \\ / \\ / \\ \n"
+            + " ( D | O | B | B | Y )\n"
+            + "  \\_/ \\_/ \\_/ \\_/ \\_/ \n";
+
 
     public Ui() {
         
     }
 
     /**
-     * Greets user.
+     * Greets user
+     * @return string format of greeting
      */
     public String sayHi() {
-         return ("Hello I'm \n" + logo + "\nWhat can I do for you?");
+         return String.format("Hello I'm \n%s\nWhat can I do for you?", logo);
     }
 
     /**
      * Greets user and ends session.
+     * @return string format of goodbye
      */
-    public void sayBye() {
-        System.out.println("  " + "Bye. Hope to see you again soon!");
+    public String sayBye() {
+        return "Dobby has no master. Dobby is freeee now!";
     }
 
     /**
      * Introduces list.
+     * @return string format of list intro
      */
-    public void list() {
-        System.out.println("Here are the tasks in your list:");
+    public String list() {
+        return "Here are the tasks in your list:\n";
     }
 
     /**
      * Informs user of deleted task.
      * @param deleted task that has been deleted from list.
      * @param size total number of tasks.
+     * @return string format of deleted task
      */
-    public void delete(Task deleted, int size) {
-        System.out.println("Noted. I've removed this task:");
-        System.out.println("  " + deleted);
-        System.out.printf("Now you have %d tasks in the list.\n", size);
+    public String delete(Task deleted, int size) {
+        return String.format("Noted. I've removed this task: %s\n Now you have %d tasks in the list.\n", deleted, size);
     }
 
     /**
      * Marks current task as done.
      * @param curr task to be marked as done.
+     * @return string format of done notification
      */
-    public void done(Task curr) {
-        System.out.println("Nice! I've marked this task as done: ");
-        System.out.println("  " + curr);
+    public String done(Task curr) {
+        return String.format("Nice! I've marked this task as done: %s)\n", curr.toString());
     }
 
     /**
      * Prints intro for found tasks.
      * @param list list of found tasks.
+     * @return String format of intro to list of items
      */
-    public void found(ArrayList list) {
+    public String found(ArrayList list) {
         if (!list.isEmpty()) {
-            System.out.println("Here are the matching tasks in your list:");
+            return "Here are the matching tasks in your list:\n";
         } else {
-            System.out.println("There are no matching tasks in your list :(");
+            return "There are no matching tasks in your list :(\n";
         }
     }
 
-    public void showLoadingError() {
-        System.out.println("OOPS! Previous tasklist failed to load. Let's start afresh!");
+    /**
+     * Prints error when file fails to load
+     * @return string error info
+     */
+    public String showLoadingError() {
+        return "OOPS! Previous tasklist failed to load. Let's start afresh!";
     }
 }

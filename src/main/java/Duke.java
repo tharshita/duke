@@ -33,36 +33,18 @@ public class Duke {
         }
     }
 
-    /**
-     * Runs duke programme.
-     */
-    public void run() {
-        parser.parse();
-    }
-
-    /**
-     * Runs main programme.
-     * @param args args passed by command line.
-     */
-    public static void main(String[] args) {
-        new Duke().run();
-
-    }
-
-
 
     /**
      * You should have your own function to generate a response to user input.
      * Replace this stub with your completed method.
      */
     public String getResponse(String input) {
-        return "Dobby heard: " + input;
+        return parser.parse(input);
     }
 
     public String greeting() {
         return ui.sayHi();
     }
-
 
 
 }
