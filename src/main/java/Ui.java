@@ -45,7 +45,7 @@ public class Ui {
      * @return string format of deleted task
      */
     public String delete(Task deleted, int size) {
-        return String.format("Noted. I've removed this task: %s\n Now you have %d tasks in the list.\n", deleted, size);
+        return String.format("Noted. I've removed this task:\n%s\n Now you have %d tasks in the list.\n", deleted, size);
     }
 
     /**
@@ -54,7 +54,7 @@ public class Ui {
      * @return string format of done notification
      */
     public String done(Task curr) {
-        return String.format("Nice! I've marked this task as done: %s)\n", curr.toString());
+        return String.format("Nice! I've marked this task as done: \n%s)\n", curr.toString());
     }
 
     /**
