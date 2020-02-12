@@ -37,6 +37,7 @@ public class TaskList {
     public String delete(int index) {
         //get task number and delete task from arraylist
         Task deleted = (Task) tasks.remove(index - 1);
+        assert deleted != null : "invalid task index";
         return ui.delete(deleted, tasks.size());
     }
 
@@ -57,6 +58,7 @@ public class TaskList {
      */
     public String done(int eventNum) {
         Task curr = (Task) tasks.get(eventNum - 1);
+        assert curr != null : "invalid task index";
         curr.markAsDone();
         return ui.done(curr);
     }
