@@ -40,16 +40,19 @@ public class Storage {
         }
     }
 
-    public void archive(String content, String archiveName) {
+    public void archive(String content){
         try {
-            fileName = archiveName;
-            BufferedWriter writer = Files.newBufferedWriter(path);
+            //move file
+            Path newPath = Paths.get(
+                    directory, "Desktop", "duke", "data", "archive.txt");
+            Files.createFile(newPath);
+            //write to file
+
+            BufferedWriter writer = Files.newBufferedWriter(newPath);
             writer.write(content);
             writer.close();
-            fileName = "tasks.txt";
         } catch (IOException e) {
-            // exception handling
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
 

@@ -66,12 +66,10 @@ public class Parser {
             str = taskList.find(keyword);
 
         } else if (instr.contains("archive")) {
-            //remove "archive" from input
-            String fileName = lines.substring(7);
             //store in separate file and clear current
-            storage.archive(taskList.tasksToString(), fileName);
-            taskList.clearTasks();
+            storage.archive(taskList.tasksToString());
             str = "archived!";
+            taskList.clearTasks();
 
         } else {
             try {
