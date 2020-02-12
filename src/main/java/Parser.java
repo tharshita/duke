@@ -41,6 +41,7 @@ public class Parser {
 
         } else if (instr.contains("delete")) {
             int eventNum = Integer.parseInt(inputArr[1]);
+
             try {
                 str = taskList.delete(eventNum);
             } catch (IndexOutOfBoundsException e) {
@@ -50,6 +51,7 @@ public class Parser {
         } else if (instr.contains("done")) {
             //get task number and change isDone to true
             int eventNum = Integer.parseInt(inputArr[1]);
+
             try {
                 str = taskList.done(eventNum);
             } catch (IndexOutOfBoundsException e) {
@@ -63,6 +65,7 @@ public class Parser {
 
         } else {
             try {
+
                 String input = lines.substring(5);
                 //add items to tasks array
                 if (instr.equalsIgnoreCase("todo")) {
