@@ -5,21 +5,20 @@ import java.util.ArrayList;
  */
 public class Ui {
     private String logo = "   _   _   _   _   _  \n"
-            +"  / \\ / \\ / \\ / \\ / \\ \n"
+            + "  / \\ / \\ / \\ / \\ / \\ \n"
             + " ( D | O | B | B | Y )\n"
             + "  \\_/ \\_/ \\_/ \\_/ \\_/ \n";
-
 
     public Ui() {
         
     }
 
     /**
-     * Greets user
+     * Greets user.
      * @return string format of greeting
      */
     public String sayHi() {
-         return String.format("Hello I'm \n%s\nWhat can I do for you?", logo);
+        return String.format("Hello I'm \n%s\nWhat can I do for you?", logo);
     }
 
     /**
@@ -45,7 +44,8 @@ public class Ui {
      * @return string format of deleted task
      */
     public String delete(Task deleted, int size) {
-        return String.format("Noted. I've removed this task:\n%s\n Now you have %d tasks in the list.\n", deleted, size);
+        return String.format("Noted. I've removed this task:\n%s\n "
+                + "Now you have %d tasks in the list.\n", deleted, size);
     }
 
     /**
@@ -71,7 +71,7 @@ public class Ui {
     }
 
     /**
-     * Prints error when file fails to load
+     * Prints error when file fails to load.
      * @return string error info
      */
     public String showLoadingError() {

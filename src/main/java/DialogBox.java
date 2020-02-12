@@ -51,6 +51,12 @@ public class DialogBox extends HBox {
         return new DialogBox(text, img);
     }
 
+    /**
+     * formats dialogue between user and duke.
+     * @param text in each dialogue box.
+     * @param img img of speaker.
+     * @return dialogue box with text and image.
+     */
     public static DialogBox getDukeDialog(String text, Image img) {
         var db = new DialogBox(text, img);
         db.flip();

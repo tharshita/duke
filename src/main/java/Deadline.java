@@ -3,7 +3,6 @@ import java.time.LocalDate;
 /**
  * Represents a deadline task.
  */
-
 public class Deadline extends Task {
     LocalDate by;
 
@@ -32,6 +31,4 @@ public class Deadline extends Task {
         return "[D]" + super.toString() + " (by: "
                 + by.getMonth() + " " + by.getDayOfMonth() + " " + by.getYear() + ")";
     }
-
-
 }

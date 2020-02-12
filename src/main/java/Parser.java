@@ -99,11 +99,10 @@ public class Parser {
             } catch (DukeException ex) {
                 //catch exceptions thrown and print out message for user
                 str = ex.toString();
-            }catch (AssertionError err) {
+            } catch (AssertionError err) {
                 str = err.toString();
             }
         }
         return str;
     }
-
 }

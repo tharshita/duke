@@ -33,10 +33,10 @@ public class Duke {
         }
     }
 
-
     /**
-     * You should have your own function to generate a response to user input.
-     * Replace this stub with your completed method.
+     * Returns response of duke based on user input.
+     * @param input from user in GUI.
+     * @return duke functionalities.
      */
     public String getResponse(String input) {
         return parser.parse(input);
@@ -45,6 +45,4 @@ public class Duke {
     public String greeting() {
         return ui.sayHi();
     }
-
-
 }
