@@ -65,10 +65,18 @@ public class Parser {
             String keyword = inputArr[1];
             str = taskList.find(keyword);
 
+        } else if (instr.contains("archive")) {
+            //remove "archive" from input
+            String fileName = lines.substring(7);
+            //store in separate file and clear current
+            storage.archive(taskList.tasksToString(), fileName);
+            taskList.clearTasks();
+            str = "archived!";
+
         } else {
             try {
                 assert lines.length() > 4 : "invalid input!";
-                String input = lines.substring(5);
+                String input = lines.substring(5); //to remove instr(egtodo) from input lines
                 //add items to tasks array
                 if (instr.equalsIgnoreCase("todo")) {
                     if (!input.isEmpty()) {

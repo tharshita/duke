@@ -40,6 +40,19 @@ public class Storage {
         }
     }
 
+    public void archive(String content, String archiveName) {
+        try {
+            fileName = archiveName;
+            BufferedWriter writer = Files.newBufferedWriter(path);
+            writer.write(content);
+            writer.close();
+            fileName = "tasks.txt";
+        } catch (IOException e) {
+            // exception handling
+            System.out.println(e);
+        }
+    }
+
     /**
      * Reads from storage in hard disk to get tasks previously added.
      * @throws IOException  If invalid path or file.
