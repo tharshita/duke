@@ -12,7 +12,7 @@ public class TaskTest {
     }
 
     @Test
-    public void testTaskStringConversion(){
+    public void testTaskStringConversion() {
         Task task = new Task("finish book");
         assertEquals("[✘]finish book", task.toString());
         task.markAsDone();
