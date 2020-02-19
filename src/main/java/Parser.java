@@ -69,6 +69,7 @@ public class Parser {
             try {
                 assert lines.length() > 4 : "invalid input!";
                 String input = lines.substring(5);
+
                 //add items to tasks array
                 if (instr.equalsIgnoreCase("todo")) {
                     if (!input.isEmpty()) {
