@@ -1,3 +1,0 @@
-T,true,borrow book
-D,false,return book,2019-10-15
-T,false,read book

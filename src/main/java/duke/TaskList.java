@@ -125,7 +125,7 @@ public class TaskList {
         str += ui.found(foundList);
         for (int i = 0; i < foundList.size(); i++) {
             Task t = foundList.get(i);
-            str += String.format("%d. %s", i + 1,t.toString());
+            str += String.format("%d. %s\n", i + 1,t.toString());
         }
         return str;
     }
