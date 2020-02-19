@@ -1,4 +1,3 @@
-import java.util.Scanner;
 
 /**
  * Handles user commands.
