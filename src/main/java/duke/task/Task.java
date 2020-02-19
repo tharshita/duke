@@ -1,3 +1,5 @@
+package duke.task;
+
 /**
  * Represents the parent class of ttodo, Deadline and Event.
  */

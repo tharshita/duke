@@ -1,9 +1,16 @@
+package duke;
+
+import duke.task.Task;
+import duke.task.Deadline;
+import duke.task.Event;
+import duke.task.Todo;
+import duke.DukeException;
+
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.ArrayList;
@@ -40,7 +47,11 @@ public class Storage {
         }
     }
 
-    public void archive(String content){
+    /**
+     * Archives current tasks to start anew.
+     * @param content of current tasks.
+     */
+    public void archive(String content) {
         try {
             //move file
             Path newPath = Paths.get(

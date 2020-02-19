@@ -1,4 +1,8 @@
-import java.util.Scanner;
+package duke.interaction;
+
+import duke.TaskList;
+import duke.DukeException;
+import duke.Storage;
 
 /**
  * Handles user commands.
@@ -24,7 +28,6 @@ public class Parser {
      * Runs actions invoked by user input.
      * @throws DukeException  If invalid command such as empty command.
      */
-
     public String parse(String lines) {
         String str;
         String[] inputArr = lines.split(" ");

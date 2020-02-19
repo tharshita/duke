@@ -1,3 +1,7 @@
+package duke.interaction;
+
+import duke.task.Task;
+
 import java.util.ArrayList;
 
 /**

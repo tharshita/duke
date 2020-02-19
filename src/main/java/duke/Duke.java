@@ -1,10 +1,9 @@
-import java.io.IOException;
+package duke;
 
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
+import duke.DukeException;
+import duke.interaction.Parser;
+import duke.interaction.Ui;
+
 
 /**
  * Creates an instance of storage, ui, tasklist and parser in the main.
