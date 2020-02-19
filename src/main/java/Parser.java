@@ -41,7 +41,7 @@ public class Parser {
 
         } else if (instr.contains("delete")) {
             int eventNum = Integer.parseInt(inputArr[1]);
-         
+            assert eventNum > 0 : "invalid task index";
 
             try {
                 str = taskList.delete(eventNum);
@@ -52,7 +52,7 @@ public class Parser {
         } else if (instr.contains("done")) {
             //get task number and change isDone to true
             int eventNum = Integer.parseInt(inputArr[1]);
-
+            assert eventNum > 0 : "invalid task index";
 
             try {
                 str = taskList.done(eventNum);
@@ -73,6 +73,8 @@ public class Parser {
 
         } else {
             try {
+                assert lines.length() > 4 : "invalid input!";
+                String input = lines.substring(5);
                 //add items to tasks array
                 if (instr.equalsIgnoreCase("todo")) {
                     if (!input.isEmpty()) {
@@ -104,6 +106,8 @@ public class Parser {
                 //catch exceptions thrown and print out message for user
                 str = ex.toString();
 
+            } catch (AssertionError err) {
+                str = err.toString();
             }
         }
         return str;
