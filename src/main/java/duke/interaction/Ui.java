@@ -8,8 +8,8 @@ import java.util.ArrayList;
  * Deals with interactions with the user.
  */
 public class Ui {
-    private String logo = "   _   _   _   _   _  \n"
-            + "  / \\ / \\ / \\ / \\ / \\ \n"
+    private String logo = "   _   _   _   _   _   _  \n"
+            + "  / \\ / \\ / \\ / \\ / \\ / \\ \n"
             + " ( D | O | B | B | Y )\n"
             + "  \\_/ \\_/ \\_/ \\_/ \\_/ \n";
 
