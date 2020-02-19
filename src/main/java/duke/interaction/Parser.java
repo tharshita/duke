@@ -76,6 +76,9 @@ public class Parser {
 
         } else {
             try {
+                if (lines.length() <5) {
+                    throw new DukeException("OOPS!!! I'm sorry, but I don't know what that means :-(");
+                }
                 assert lines.length() > 4 : "invalid input!";
                 String input = lines.substring(5);
                 //add items to tasks array
