@@ -119,6 +119,7 @@ public class TaskList {
             Task t = foundList.get(i);
             str += String.format("%d. %s", i + 1,t.toString());
         }
+        assert str.length() > 0 : "invalid returned string";
         return str;
     }
 
