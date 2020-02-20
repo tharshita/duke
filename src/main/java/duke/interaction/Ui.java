@@ -58,7 +58,7 @@ public class Ui {
      * @return string format of done notification
      */
     public String done(Task curr) {
-        return String.format("Nice! I've marked this task as done: \n%s)\n", curr.toString());
+        return String.format("Nice! I've marked this task as done: \n%s\n", curr.toString());
     }
 
     /**

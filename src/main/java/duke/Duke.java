@@ -44,4 +44,5 @@ public class Duke {
     public String greeting() {
         return ui.sayHi();
     }
+
 }

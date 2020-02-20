@@ -3,6 +3,9 @@ package duke.interaction;
 import duke.TaskList;
 import duke.DukeException;
 import duke.Storage;
+import javafx.animation.PauseTransition;
+import javafx.util.Duration;
+
 
 /**
  * Handles user commands.
@@ -35,8 +38,8 @@ public class Parser {
 
         if (instr.toLowerCase().contains("bye")) {
             //exit when "bye"
-            storage.writeToFile(taskList.tasksToString());
             str = ui.sayBye();
+
 
         } else if (instr.equalsIgnoreCase("list")) {
             //loop through tasks array to list
@@ -116,6 +119,8 @@ public class Parser {
                 str = err.toString();
             }
         }
+        //write to storage
+        storage.writeToFile(taskList.tasksToString());
         return str;
     }
 }
