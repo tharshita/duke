@@ -39,7 +39,7 @@ public class Parser {
         if (instr.toLowerCase().contains("bye")) {
             //exit when "bye"
             str = ui.sayBye();
-
+            System.exit(0);
 
         } else if (instr.equalsIgnoreCase("list")) {
             //loop through tasks array to list
