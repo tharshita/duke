@@ -1,10 +1,11 @@
 package duke.interaction;
 
+import java.util.ArrayList;
+
 import duke.TaskList;
 import duke.DukeException;
 import duke.Storage;
-import javafx.animation.PauseTransition;
-import javafx.util.Duration;
+import duke.task.Task;
 
 
 /**
@@ -14,6 +15,7 @@ public class Parser {
     private Ui ui;
     private TaskList taskList;
     private Storage storage;
+    private ArrayList<Task> archived;
 
     /**
      * Constructor for Parser.
@@ -77,6 +79,14 @@ public class Parser {
             str = "archived!";
             taskList.clearTasks();
 
+        } else if (instr.contains("history")) {
+            //show most recently archived content
+            try {
+                archived = storage.retreive();
+            } catch (DukeException e) {
+                e.printStackTrace();
+            }
+            str = "Here are your recently archived tasks:\n" + taskList.listArchived(archived);
         } else {
             try {
                 if (lines.length() < 5) {

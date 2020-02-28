@@ -25,6 +25,10 @@ public class TaskList {
         this.ui = ui;
     }
 
+    public TaskList(ArrayList<Task> tasks) {
+        this.tasks = tasks;
+    }
+
     /**
      * Lists all tasks in chronological order.
      */
@@ -33,6 +37,21 @@ public class TaskList {
         for (int i = 0; i < tasks.size(); i++) {
             //print out everything one by one
             Task curr = (Task) tasks.get(i);
+            str += String.format("%d. %s\n", i + 1, curr.toString());
+        }
+        return str;
+    }
+
+    /**
+     * list all archived tasks
+     * @param archived tasks
+     * @return string of archived tasks in ui format
+     */
+    public String listArchived(ArrayList<Task> archived) {
+        String str = "";
+        for (int i = 0; i < archived.size(); i++) {
+            //print out everything one by one
+            Task curr = (Task) archived.get(i);
             str += String.format("%d. %s\n", i + 1, curr.toString());
         }
         return str;

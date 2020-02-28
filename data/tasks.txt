@@ -1,3 +1,4 @@
-T,false,book me
-T,true,borrow book
-T,true,have fun
+T,false,read
+T,false,borrow
+T,false,have fun
+T,false,meeps
