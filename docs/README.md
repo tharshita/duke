@@ -61,8 +61,8 @@ Example of usage:
 Expected outcome:
 
 `Here are the tasks in your list:
-1. [T][✘] borrow book
-2. [D][✘] return book (by: OCTOBER 15 2019)
+1. [T][✘] borrow book`
+`2. [D][✘] return book (by: OCTOBER 15 2019)
 3. [E][✘] project meeting (Sat: Mon 2-4pm)`
 
 ### Mark task as done
@@ -119,6 +119,23 @@ Example of usage:
 Expected outcome:
 
 `Archived!`
+
+### History
+Shows list of most recently archived tasks. 
+Cannot be used unless archive has been used at least once.
+#### `history` 
+
+### Usage
+Example of usage: 
+
+`history`
+
+Expected outcome:
+
+`Here are your archived tasks:
+1. [T][✘] borrow book`
+`2. [D][✘] return book (by: OCTOBER 15 2019)
+3. [E][✘] project meeting (Sat: Mon 2-4pm)`
   
 ### Exit
 Exits a program and saves current tasks.
